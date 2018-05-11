@@ -99,20 +99,20 @@ public class Maze {
         markStartPos();
         markEndPos();
 
-        String route = "";
+        String map = "";
         for(int i=0; i<this.maze.length; i++){
             for(int j=0; j< this.maze[i].length; j++){
                 if(this.maze[i][j].equals(MazeMain.WallChar)){
-                    route += "#";
+                    map += "#";
                 }else if(maze[i][j].equals(MazeMain.PassChar)){
-                    route += " ";
+                    map += " ";
                 }else{
-                    route += maze[i][j];
+                    map += maze[i][j];
                 }
             }
-            if(i < this.maze.length -1)route += "\n";
+            if(i < this.maze.length -1)map += "\n";
         }
-        return route;
+        return map;
     }
 
     //mark start position of the maze
