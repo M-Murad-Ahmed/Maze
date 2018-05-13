@@ -14,12 +14,12 @@
       <file leaf-file-name="Maze.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Maze.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="180" column="66" lean-forward="false" selection-start-line="180" selection-start-column="66" selection-end-line="180" selection-end-column="66" />
+            <state relative-caret-position="1545">
+              <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5861#5862#0" expanded="true" />
-                <element signature="e#5905#5906#0" expanded="true" />
+                <element signature="e#5761#5762#0" expanded="true" />
+                <element signature="e#5805#5806#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -213,12 +213,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1526211170090</updated>
-      <workItem from="1526211171834" duration="1196000" />
+      <workItem from="1526211171834" duration="1598000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1196000" />
+    <option name="totallyTimeSpent" value="1598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="952" extended-state="0" />
@@ -273,12 +273,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Maze.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="180" column="66" lean-forward="false" selection-start-line="180" selection-start-column="66" selection-end-line="180" selection-end-column="66" />
+        <state relative-caret-position="1545">
+          <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5861#5862#0" expanded="true" />
-            <element signature="e#5905#5906#0" expanded="true" />
+            <element signature="e#5761#5762#0" expanded="true" />
+            <element signature="e#5805#5806#0" expanded="true" />
           </folding>
         </state>
       </provider>
