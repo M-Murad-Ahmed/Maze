@@ -1,5 +1,6 @@
 import java.io.File;
 
+
 public class MazeMain {
 
     final static String PathChar = "X";
@@ -29,15 +30,12 @@ public class MazeMain {
             System.out.println("File not found.");
             System.exit(0);
         }
-
-
+        
         if(myMaze.recursiveSolve(myMaze.getStartPosX(), myMaze.getStartPosY())){
             // print the maze with the output requirements - start as S, end as E, passage as ' ' and path as #
             System.out.println(myMaze.makeToString());
         }else{
             System.out.println("Maze is unsolvable.");
         }
-
-
     }
 }
