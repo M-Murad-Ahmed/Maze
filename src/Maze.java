@@ -68,37 +68,29 @@ public class Maze {
      * @return true if solvable, false otherwise
      */
     public boolean recursiveSolve(int xPos, int yPos) {
-
         // if we reached base case (i.e. come to the end) return true
         if (xPos == this.endPosX && yPos == this.endPosY) return true;
+        // mark this position traversed +1
         setTraversed(xPos, yPos);
         // markPos the current position of the maze
         markPos(xPos, yPos, PathChar);
         boolean solved = false;
         //check if moving North is valid, the position has not been already visited and the maze is not solved
-        //isValid(xPos, yPos-1);
         if (isValid(xPos, yPos-1) && checkTraversed(xPos, yPos-1) && !wasHere(xPos, yPos - 1) && !solved) {
             solved = recursiveSolve(xPos, yPos - 1);
         }
-
         // check if moving East is valid, the position has not been already visited and the maze is not solved
-        //isValid(xPos+1, yPos)
         if (isValid(xPos+1, yPos) && checkTraversed(xPos+1, yPos) && !wasHere(xPos + 1, yPos) && !solved) {
             solved = recursiveSolve(xPos + 1, yPos);
         }
-
         //check if moving South is valid, the position has not been already visited and the maze is not solved
-        //isValid(xPos, yPos+1)
         if (isValid(xPos, yPos+1) && checkTraversed(xPos, yPos+1) && !wasHere(xPos, yPos + 1) && !solved) {
             solved = recursiveSolve(xPos, yPos + 1);
         }
-
         // check if moving West is valid, the position has not been already visited and the maze is not solved
-        //isValid(xPos-1, yPos)
         if (isValid(xPos-1, yPos) && checkTraversed(xPos-1, yPos)&& !wasHere(xPos - 1, yPos) && !solved) {
             solved = recursiveSolve(xPos - 1, yPos);
         }
-
         //if we are unable to reach the end from the current pos, mark the pos as 0, and return as the end is unreachable
         // from this pos
         if (!solved) markPos(xPos, yPos, PassChar);
@@ -107,10 +99,9 @@ public class Maze {
 
 
 
-    public String makeToString(){
+    public String createMap(){
         markStartPos();
         markEndPos();
-
         String map = "";
         for(int i=0; i<this.maze.length; i++){
             for(int j=0; j< this.maze[i].length; j++){
@@ -145,9 +136,8 @@ public class Maze {
         return startPosY;
     }
 
-    /**
+    /*
      * mark a specific maze grid with a given char
-     *
      * @param xPos = x-coordinate of the grid to markPos
      * @param yPos = y-coordinate of the grid to markPos
      * @param mark - the Char used to mark the position
@@ -185,7 +175,6 @@ public class Maze {
 
     /*
      * Check if position has been visited
-     *
      * @param xPos = x coordinate of the grid to check
      * @param  yPos = y coordinate of the grid to check
      * @return true if has been visited, false otherwise

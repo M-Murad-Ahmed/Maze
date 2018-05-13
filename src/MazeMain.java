@@ -31,7 +31,7 @@ public class MazeMain {
 
         if(myMaze.recursiveSolve(myMaze.getStartPosX(), myMaze.getStartPosY())){
             // print the maze with the output requirements - start as S, end as E, passage as ' ' and path as #
-            System.out.println(myMaze.makeToString());
+            System.out.println(myMaze.createMap());
         }else{
             System.out.println("Maze is unsolvable.");
         }
