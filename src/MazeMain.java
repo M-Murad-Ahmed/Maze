@@ -3,9 +3,7 @@ import java.io.File;
 
 public class MazeMain {
 
-    final static String PathChar = "X";
-    final static String PassChar = "0";
-    final static String WallChar = "1";
+
 
     /**
      * @param args command line argument pointing to .txt file
@@ -30,7 +28,7 @@ public class MazeMain {
             System.out.println("File not found.");
             System.exit(0);
         }
-        
+
         if(myMaze.recursiveSolve(myMaze.getStartPosX(), myMaze.getStartPosY())){
             // print the maze with the output requirements - start as S, end as E, passage as ' ' and path as #
             System.out.println(myMaze.makeToString());

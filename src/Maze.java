@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 public class Maze {
     private final static String START_CHAR = "S";
     private final static String END_CHAR = "E";
+    private final static String PathChar = "X";
+    private final static String PassChar = "0";
+    private final static String WallChar = "1";
     private Scanner scanner;
     // 2 dimensional String array representing the maze
     private String[][] maze;
@@ -57,7 +60,7 @@ public class Maze {
         }
     }
 
-    /**
+    /*
      * This method is used to solve the maze, if it is possible
      * @param xPos the x-coordinate of the grid
      * @param yPos  the y-coordinate of the grid
@@ -69,7 +72,7 @@ public class Maze {
         if (xPos == this.endPosX && yPos == this.endPosY) return true;
         setTraversed(xPos, yPos);
         // markPos the current position of the maze
-        markPos(xPos, yPos, MazeMain.PathChar);
+        markPos(xPos, yPos, PathChar);
         boolean solved = false;
         //check if moving North is valid, the position has not been already visited and the maze is not solved
         //isValid(xPos, yPos-1);
@@ -97,7 +100,7 @@ public class Maze {
 
         //if we are unable to reach the end from the current pos, mark the pos as 0, and return as the end is unreachable
         // from this pos
-        if (!solved) markPos(xPos, yPos, MazeMain.PassChar);
+        if (!solved) markPos(xPos, yPos, PassChar);
         return solved;
     }
 
@@ -110,9 +113,9 @@ public class Maze {
         String map = "";
         for(int i=0; i<this.maze.length; i++){
             for(int j=0; j< this.maze[i].length; j++){
-                if(this.maze[i][j].equals(MazeMain.WallChar)){
+                if(this.maze[i][j].equals(WallChar)){
                     map += "#";
-                }else if(maze[i][j].equals(MazeMain.PassChar)){
+                }else if(maze[i][j].equals(PassChar)){
                     map += " ";
                 }else{
                     map += maze[i][j];
@@ -162,7 +165,7 @@ public class Maze {
         return true;
     }
 
-    /**
+    /*
      * This method is used to check is the position in the maze is valid
      * A position is considered valid if it is within the bounds of the maze
      * and it is not a wall of the maze
@@ -172,12 +175,13 @@ public class Maze {
      */
     private boolean isValid(int xPos, int yPos){
         if(xPos<0 || yPos<0 || xPos >= this.maze[0].length || yPos >= this.maze.length) return false;
-        if (this.maze[yPos][xPos].equals(MazeMain.WallChar)){return false;}
+        if (this.maze[yPos][xPos].equals(WallChar)){return false;}
+        if (this.maze[yPos][xPos].equals(WallChar)){return false;}
         return true;
     }
 
 
-    /**
+    /*
      * Check if position has been visited
      *
      * @param xPos = x coordinate of the grid to check
@@ -185,7 +189,7 @@ public class Maze {
      * @return true if has been visited, false otherwise
      */
     private boolean wasHere(int xPos, int yPos){
-        return this.maze[yPos][xPos].equals(MazeMain.PathChar);
+        return this.maze[yPos][xPos].equals(PathChar);
     }
 
 }
