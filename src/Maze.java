@@ -11,6 +11,7 @@ public class Maze {
     private Scanner scanner;
     // 2 dimensional String array representing the maze
     private String[][] maze;
+    // 2 dimensional int array representing the number of times we go through an index
     private int [][] traversed;
     //The height, width, starting and ending positions (x and y) of the maze
     private int  height, width, startPosX, startPosY, endPosX, endPosY;
@@ -156,10 +157,12 @@ public class Maze {
 
     }
 
+    // increment the number of times we pass through an index
     private void setTraversed(int xPos, int yPos){
         this.traversed[yPos][xPos]++;
     }
 
+    // if the index has been traversed 2 or more times, return false
     private boolean checkTraversed(int xPos, int yPos){
         if (traversed[yPos][xPos] >= 2) return false;
         return true;
@@ -175,7 +178,6 @@ public class Maze {
      */
     private boolean isValid(int xPos, int yPos){
         if(xPos<0 || yPos<0 || xPos >= this.maze[0].length || yPos >= this.maze.length) return false;
-        if (this.maze[yPos][xPos].equals(WallChar)){return false;}
         if (this.maze[yPos][xPos].equals(WallChar)){return false;}
         return true;
     }
